@@ -3,8 +3,9 @@
 """
 import requests
 from bs4 import BeautifulSoup
+import pyautogui
 
-keyword = input('검색어 입력 : ')
+keyword = pyautogui.prompt('검색어 입력 : ')
 response = requests.get(f"https://search.naver.com/search.naver?where=news&sm=tab_jum&query={keyword}")
 html = response.text
 soup = BeautifulSoup(html, 'html.parser')
